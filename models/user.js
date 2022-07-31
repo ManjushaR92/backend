@@ -10,11 +10,9 @@ mongoose.connect(
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    email: {
-                                 // here we are adding attributes to our declared schema                
-            type:String,         // in the options we have to give the type. and will can 
-            unique: true         // also add additional options, since email is unique we
-                                 // will create it as unique.
+            email: {                                              
+            type:String,          
+            unique: true         // since email is unique we will create it as unique.
 },
 
             name: {

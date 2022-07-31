@@ -5,8 +5,12 @@ const user = require('../models/user')
 
 // REST API
 
+// add user
+
 router.post('/adduser', (req, res) => {
+
     // create a new user object and pass the formdata to the newUser . then call //.save() method . it will return a promise .
+
     var newUser = user({  
     email: req.body.email,
     name: req.body.name,
@@ -16,6 +20,7 @@ router.post('/adduser', (req, res) => {
     });
   
     // save the data via save method
+
     newUser
       .save()
       .then(doc => {
@@ -26,6 +31,9 @@ router.post('/adduser', (req, res) => {
         res.send(err);
       });
   });
+
+
+//   get all users
 
   router.get('/viewusers',(req,res)=>{
     user.find({})
